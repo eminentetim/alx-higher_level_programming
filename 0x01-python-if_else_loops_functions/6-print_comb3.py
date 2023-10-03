@@ -5,4 +5,4 @@ for i in range(0, 10):
         if i == 8 and k == 9:
             print('89')
         else:
-            print('{}{},' .format(i, k), end='')
+            print('{}{}, '.format(i, k), end='')
