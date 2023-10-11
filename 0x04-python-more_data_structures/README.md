@@ -1,8 +1,4 @@
  Python More Data Structures: Set, Dictionary
-
-
-
-
 Requirements
 General
 Allowed editors: vi, vim, emacs
