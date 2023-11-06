@@ -2,7 +2,7 @@
 
 class MyList(list):
     """
-    This class is a subclass of the built_in list class 
+    This class is a subclass of the built_in list class
     """
 
     def print_sorted(self):
