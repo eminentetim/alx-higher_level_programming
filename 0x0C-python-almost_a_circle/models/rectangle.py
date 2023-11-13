@@ -107,4 +107,48 @@ class Rectangle(Base):
             [print(" ", end="") for x in range(self.x)]
             [print("#", end="") for w in range(self.width)]
             print("")
+    def __str__(self):
+        '''
+        String representation
+        '''
+        return ('[Rectangle] ({}) {}/{} - {}/{}'.format(
+            self.id, self.x, self.y, self.width, self.height))
 
+    def update(self, *args, **kwargs):
+        '''
+        updating the rectangle
+
+        using  **kwargs (dict): New key/value pairs of attributes.
+        '''
+        if argc > 0:
+            try:
+                self.id = args[0]
+                self.width = args[1]
+                self.height = args[2]
+                self.x = args[3]
+                self.y = args[4]
+            except:
+                pass
+        else:
+            if 'id' in kwargs:
+                self.id = kwargs['id']
+            if 'width' in kwargs:
+                self.id = kwargs['width']
+            if 'height' in kwargs:
+                self.id = kwargs['height']
+            if 'x' in kwargs:
+                self.id = kwargs['x']
+            if 'y' in kwargs:
+                self.id = kwargs['y']
+
+     def to_dictionary(self):
+        '''
+       Pull the parameters out in
+       the function as a dictionary
+        '''
+        return {
+            'x': self.x,
+            'y': self.y,
+            'id': self.id,
+            'height': self.height,
+            'width': self.width}
