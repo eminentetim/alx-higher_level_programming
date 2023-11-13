@@ -1,12 +1,13 @@
 #!/usr/bin/python3
-''''
-Defining ansquare class that inherite rectangle 
+'''
+Write the class Square that
+inherits from Rectangle:
 '''
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-     '''
+    '''
     Square class inherits from Rectangle
     '''
 
@@ -14,10 +15,10 @@ class Square(Rectangle):
         '''
         Constructor
         '''
-        super()>__init__(size, size, x, y, id)
+        super().__init__(size, size, x, y, id)
         self.size = size
 
-      @property
+    @property
     def size(self):
         '''
         size getter
@@ -31,8 +32,8 @@ class Square(Rectangle):
         '''
         self.width = value
         self.height = value
-    
-     def update(self, *args, **kwargs):
+
+    def update(self, *args, **kwargs):
         '''
         Makes args variadic
         '''

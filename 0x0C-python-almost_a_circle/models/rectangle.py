@@ -141,10 +141,10 @@ class Rectangle(Base):
             if 'y' in kwargs:
                 self.id = kwargs['y']
 
-     def to_dictionary(self):
+    def to_dictionary(self):
         '''
-       Pull the parameters out in
-       the function as a dictionary
+        Pull the parameters out in
+        the function as a dictionary
         '''
         return {
             'x': self.x,
