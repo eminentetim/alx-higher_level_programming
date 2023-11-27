@@ -16,7 +16,7 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
-    
+
     @property
     def width(self):
         '''
@@ -107,6 +107,7 @@ class Rectangle(Base):
             [print(" ", end="") for x in range(self.x)]
             [print("#", end="") for w in range(self.width)]
             print("")
+
     def __str__(self):
         '''
         String representation
@@ -127,7 +128,8 @@ class Rectangle(Base):
                 self.height = args[2]
                 self.x = args[3]
                 self.y = args[4]
-            except:
+
+            except Exception as e:
                 pass
         else:
             if 'id' in kwargs:
