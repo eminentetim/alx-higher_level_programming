@@ -1,5 +1,4 @@
-
- Python - Almost a circle
+Python - Almost a circle
 Python
 OOP
 
@@ -29,3 +28,4 @@ Your file organization in the tests folder should be the same as your project: e
 All your tests should be executed by using this command: python3 -m unittest discover tests
 You can also test file by file by using this command: python3 -m unittest tests/test_models/test_base.py
 We strongly encourage you to work together on test cases so that you don’t miss any edge case
+
