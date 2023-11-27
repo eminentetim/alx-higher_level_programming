@@ -16,7 +16,7 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
-
+    """
     @property
     def width(self):
         '''
@@ -154,3 +154,4 @@ class Rectangle(Base):
             'id': self.id,
             'height': self.height,
             'width': self.width}
+        """
