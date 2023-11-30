@@ -104,7 +104,7 @@ class Rectangle(Base):
         '''
         return ('[Rectangle] ({}) {}/{} - {}/{}'.format(
             self.id, self.x, self.y, self.width, self.height))
-    """
+
     def update(self, *args, **kwargs):
         '''
         updating the rectangle
@@ -132,7 +132,7 @@ class Rectangle(Base):
                 self.id = kwargs['x']
             if 'y' in kwargs:
                 self.id = kwargs['y']
-
+    """
     def to_dictionary(self):
         '''
         Pull the parameters out in
