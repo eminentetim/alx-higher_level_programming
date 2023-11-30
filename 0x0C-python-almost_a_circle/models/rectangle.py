@@ -84,7 +84,7 @@ class Rectangle(Base):
         Returns area
         '''
         return self.width * self.height
-    """
+
     def display(self):
         '''
         print the rectangle using # character
@@ -97,7 +97,7 @@ class Rectangle(Base):
             [print(" ", end="") for x in range(self.x)]
             [print("#", end="") for w in range(self.width)]
             print("")
-
+    """
     def __str__(self):
         '''
         String representation
