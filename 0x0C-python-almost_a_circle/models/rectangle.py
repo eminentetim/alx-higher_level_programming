@@ -111,6 +111,7 @@ class Rectangle(Base):
 
         using  **kwargs (dict): New key/value pairs of attributes.
         '''
+        argc = len(args)
         if argc > 0:
             try:
                 self.id = args[0]
