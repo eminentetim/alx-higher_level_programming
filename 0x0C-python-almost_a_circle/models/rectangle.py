@@ -133,7 +133,7 @@ class Rectangle(Base):
                 self.id = kwargs['x']
             if 'y' in kwargs:
                 self.id = kwargs['y']
-    
+
     def to_dictionary(self):
         '''
         Pull the parameters out in
