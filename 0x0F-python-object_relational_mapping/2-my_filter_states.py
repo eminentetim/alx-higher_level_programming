@@ -14,7 +14,6 @@ if __name__ == '__main__':
         username = sys.argv[1]
         password = sys.argv[2]
         db_name = sys.argv[3]
-        name_searched = sys.argv[4]
         db = MySQLdb.connect(
                 host="localhost",
                 port=3306,
@@ -22,9 +21,11 @@ if __name__ == '__main__':
                 passwd=password,
                 db=db_name)
         c = db.cursor()
-        c.execute("SELECT * FROM states WHERE name = %s ORDER BY id")
+        c.execute("SELECT * FROM states WHERE name LIKE '{:s}' ORDER BY \
+    id ASC".format(sys.argv[4]))
         for state in c.fetchall():
-            print(state)
-            ''' Close the cursor and database connection'''
+            if state[1] == sys.argv[4]:
+                print(state)
+                ''' Close the cursor and database connection'''
         c.close()
         db.close()
