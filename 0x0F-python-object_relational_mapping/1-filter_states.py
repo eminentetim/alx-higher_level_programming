@@ -19,9 +19,9 @@ if __name__ == '__main__':
                 user=username,
                 passwd=password,
                 db=db_name)
-        cusor = db.cursor()
-        cusor.execute("SELECT * FROM states WHERE name LIKE 'N%'")
-        for rows in cusor.fetchall():
+        c = db.cursor()
+        c.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY 'id'")
+        for rows in c.fetchall():
             print(rows)
-        cusor.close()
+        c.close()
         db.close()
