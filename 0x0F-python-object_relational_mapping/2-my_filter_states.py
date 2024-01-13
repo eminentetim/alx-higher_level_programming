@@ -22,10 +22,9 @@ if __name__ == '__main__':
                 passwd=password,
                 db=db_name)
         c = db.cursor()
-        c.execute("SELECT * FROM states WHERE name LIKE '{:s}' ORDER BY id")
+        c.execute("SELECT * FROM states WHERE name = %s ORDER BY id")
         for state in c.fetchall():
-            if state[1] == sys.argv[4]:
-                print(state)
+            print(state)
             ''' Close the cursor and database connection'''
         c.close()
         db.close()
