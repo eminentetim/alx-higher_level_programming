@@ -27,4 +27,3 @@ if __name__ == '__main__':
             ''' Close the cursor and database connection'''
         c.close()
         db.close()
-
