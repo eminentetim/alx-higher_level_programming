@@ -24,7 +24,7 @@ if __name__ == '__main__':
         c = db.cursor()
         c.execute("SELECT cities.id, cities.name, states.name \
                      FROM cities \
-                     INNER JOIN states \
+                     JOIN states \
                         ON cities.states = states.id \
                      ORDER BY cities.id")
     
