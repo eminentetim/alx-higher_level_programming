@@ -4,35 +4,21 @@ Lists all states from the database hbtn_0e_0_usa.
 Usage: ./0-select_states.py <mysql username> \
                             <mysql password> \
                              <database name> \
-                             <state namme searched>
+                             <state name searched>
 """
-import sys
+from sys import argv
 import MySQLdb
+if __name__ == "__main__":
 
-if __name__ == '__main__':
-    if len(sys.argv) == 5:
-        username = sys.argv[1]
-        password = sys.argv[2]
-        db_name = sys.argv[3]
-        state = sys.argv[4]
-        db = MySQLdb.connect(
-                host="localhost",
-                port=3306,
-                user=username,
-                passwd=password,
-                db=db_name,
-                charset="utf8")
-        c = db.cursor()
-        c.execute("SELECT cities.name \
-                     FROM cities \
-                     JOIN states \
-                     ON cities.states_id = states.id \
-                     WHERE states.name  {':s'} \
-                     ORDER BY cities.id")
-    
-        for state in c.fetchall():
-            print(state)
-            ''' Close the cursor and database connection'''
-        c.close()
-        db.close()
+    conn = MySQLdb.connect(host="localhost", port=3306, charset="utf8",
+                           user=argv[1], passwd=argv[2], db=argv[3])
 
+    cur = conn.cursor()
+    cur.execute("SELECT cities.id, cities.name, states.name FROM cities LEFT JOIN\
+            states ON cities.state_id = states.id WHERE states.name=%s\
+            ORDER by cities.id ASC;",
+                (argv[4], ))
+    query_rows = cur.fetchall()
+    print(', '.join([row[1] for row in query_rows]))
+    cur.close()
+    conn.close()
